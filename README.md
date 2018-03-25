@@ -1,8 +1,8 @@
-#Docker
+# Docker
 
 Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.
 
-##Section 2
+## Section 2
 
 #### concepts:
 **image** - the set of different software pieces that make up an application
