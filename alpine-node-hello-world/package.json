@@ -2,6 +2,8 @@
   "name": "docker_web_app",
   "version": "1.0.0",
   "description": "Based on https://www.mundodocker.com.br/alpine-faca-voce-mesmo/",
+  "repository": "github:fabioaromanini/docker",
+  "license": "GPL-3.0",
   "author": "Fábio Romanini",
   "main": "app.js"
 }
