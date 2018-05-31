@@ -11,9 +11,9 @@ Docker provides a way to run applications securely isolated in a container, pack
 
 **hub.docker.com** - a repository for images (like github is a repo for code)
 
-#### most used commands:
+#### cheatsheet:
 * docker version
-	* displays *some* information about the currently installed docker version 
+	* displays *some* information about the currently installed docker version
 
 * docker info
 	* displays *plenty* of information about currently installed docker version
@@ -43,3 +43,23 @@ Docker provides a way to run applications securely isolated in a container, pack
 * docker container rm [*uuid or container_name*]*
 	* deletes a container identified by uuid or name running in the background. For safety reasons, it won't delete running containers, unless the argument *-f* is used
 
+* docker container exec *args container_name*
+	* executes command on the selected container
+	* *args*
+		* -it: shell
+
+* docker build *args* path/containing/dockerfile
+	* creates image from dockerfile
+	* *args*
+		* -t image_name[:tag]
+
+* docker container port *container_name*
+	* displays relation between host and container ports
+
+* docker container inspect *args* *container_name*
+	* displays *plenty* of info for a container
+	* *args*
+		* --format '{{ *.config.name.* }}'
+
+* docker [*container*] stats
+	* displays resources and information for all containers that are currently running
