@@ -1,0 +1,17 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t fabioaromanini/front_test -f ./front/Dockerfile.dev ./front/
+
+script:
+  - docker run fabioaromanini/front_test npm test -- --coverage
+
+after_success:
+  - docker build -t fabioaromanini/fibonacci-front ./front
+  - docker build -t fabioaromanini/fibonacci-nginx ./nginx
+  - docker build -t fabioaromanini/fibonacci-server ./server
+  - docker build -t fabioaromanini/fibonacci-worker ./worker
+
+  - 
