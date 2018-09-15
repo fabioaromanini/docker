@@ -1,17 +1,10 @@
-# Docker
+# Docker Examples
 
 Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.
 
-## Section 2
+This repository contains some code examples that I write to learn about docker and its tools. Each directory is a separate project that generates one or more Docker images. In case it generates more than one image, **docker-compose** is used to coordinate the containers execution.
 
-#### concepts:
-**image** - the set of different software pieces that make up an application
-
-**container** - a running instance of an application
-
-**hub.docker.com** - a repository for images (like github is a repo for code)
-
-#### cheatsheet:
+### Handy Commands
 * docker version
 	* displays *some* information about the currently installed docker version
 
@@ -21,10 +14,10 @@ Docker provides a way to run applications securely isolated in a container, pack
 * docker container run *args* *image_name*
 	* searches locally image_name's latest version. If it's not found, docker will download it, and then start a container from image_name. Can be stopped with *CTRL + C*
 	* *args*
-	* --publish	*physical_port:docker_port*: maps a given port of your machine to a port of the container
-	* --detach: runs process on background. Returns UUID
+	* -p or --publish	*physical_port:docker_port*: maps a given port of your machine to a port of the container
+	* -d or --detach: runs process on background. Returns UUID
 	* --name: gives a name to a container, in order to avoid using UUID
-	* --env: pass environment variables to a container
+	* -e or --env: pass environment variables to a container
 
 * docker container ls *args*
 	* lists running containers
@@ -33,6 +26,9 @@ Docker provides a way to run applications securely isolated in a container, pack
 
 * docker container stop [*uuid or container_name*]*
 	* stop container identified by uuid or name running in the background
+
+* docker container stop $(docker ps -aq)
+	* stops all containers
 
 * docker container logs *uuid or container_name*
 	* show logs of a container identified by uuid or name running in the background
